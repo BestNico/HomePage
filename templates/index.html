@@ -1,0 +1,157 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block title %}
+    Arizona
+{% endblock title %}
+
+{% block content %}
+    <div class="first-content">
+        <div class="pic home-picture" style="background: url(static/images/homebg.jpg);">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>Welcome to creativity</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="second-section">
+            <div class="filters">
+                <ul id="filters">
+                    <li class="active" data-filter="*">All</li>
+                    <li data-filter=".design">Design</li>
+                    <li data-filter=".photography">Photography</li>
+                    <li data-filter=".art">Art Work</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row masonry">
+            <div class="col-md-4 col-sm-6 col-xs-12 selector design">
+                <div class="item">
+                    <img src="static/images/pencil.jpg" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">Creative</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector design">
+                <div class="item">
+                    <img src="static/images/pic2.jpg" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">Envato</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector photography">
+                <div class="item">
+                    <img src="static/images/saltimage.jpg" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">How we do</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector art">
+                <div class="item">
+                    <img src="static/images/photo.jpg" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">Imagine</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector art">
+                <div class="item">
+                    <img src="static/images/22.jpg" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">Paradise</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector photography">
+                <div class="item">
+                    <img src="static/images/world.png" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">White</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector design">
+                <div class="item">
+                    <img src="static/images/interior.jpg" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">History</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector art">
+                <div class="item">
+                    <img src="static/images/coffee1.jpeg.jpg" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">Books</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector design">
+                <div class="item">
+                    <img src="static/images/pic10.png" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">Sky</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector">
+                <div class="item">
+                    <img src="static/images/pic4.png" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">Words</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 selector">
+                <div class="item">
+                    <img src="static/images/vitke.jpg" alt="">
+                    <div class="overlay">
+                        <div class="overlay-inner">
+                            <h3><a href="single1.html">Cover</a></h3>
+                            <h5><a href="single1.html">Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-load-more">
+            <button class="load-more">
+            Load More
+            </button>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Thori'del
+{% endblock title %}
+
+{% block content %}
+    <div class="first-content">
+        <div class="pic home-picture" style="background: url({% static 'images/homebg.jpg' %});">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>Login</h3>
+            </div>
+        </div>
+    </div>
+    <div class="form-div">
+        <form class="form-signin" method="post" action=".">
+            {% csrf_token %}
+            <div class="form-label-group">
+                <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="username" required autofocus>
+                <label for="inputEmail">Username</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                <label for="inputPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-info btn-lg btn-block" type="submit">Sign in</button>
+        </form>
+    </div>
+{% endblock content %}
+

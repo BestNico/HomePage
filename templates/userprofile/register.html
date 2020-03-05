@@ -10,7 +10,7 @@
         <div class="pic home-picture" style="background: url({% static 'images/homebg.jpg' %});">
             <div class="overlay"></div>
             <div class="content">
-                <h3>Login</h3>
+                <h3>Register</h3>
             </div>
         </div>
     </div>
@@ -23,17 +23,21 @@
             </div>
 
             <div class="form-label-group">
+                <input type="email" id="email" class="form-control" placeholder="Email address" name="email" required>
+                <label for="email">Email address</label>
+            </div>
+
+            <div class="form-label-group">
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
                 <label for="inputPassword">Password</label>
             </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                <input type="checkbox" value="remember-me"> Remember me
-                </label>
+            <div class="form-label-group">
+                <input type="password" id="inputPassword2" class="form-control" placeholder="Password" name="password2" required>
+                <label for="inputPassword2">Confirm Password</label>
             </div>
-            <button class="btn btn-info btn-lg btn-block" type="submit">Sign in</button>
+
+            <button class="btn btn-info btn-lg btn-block" type="submit">Register</button>
         </form>
     </div>
 {% endblock content %}
-

@@ -58,8 +58,10 @@
                                     <li><a href="{% url 'userprofile:logout' %}">Logout</a></li>
                                 </ul>
                             </li>
+                            <li style="display: none;"><a href="{% url 'userprofile:register' %}">Register</a></li>
                         {% else %}
                             <li><a href="{% url 'userprofile:login' %}">Login</a></li>
+                            <li><a href="{% url 'userprofile:register' %}">Register</a></li>
                         {% endif %}
                     </ul>
                 </div>

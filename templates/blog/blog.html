@@ -27,7 +27,7 @@
                         <span>{{ article.created }}</span>
                         <p>{{ article.body|slice:'500' }}</p>
                         <div class="btn-load-more">
-                            <a class="load-more" href="blog1.html">Read More..</a>
+                            <a class="load-more" href="{% url 'article:article_detail' article.id %}">Read More..</a>
                         </div>
                     </div>
                 </div>

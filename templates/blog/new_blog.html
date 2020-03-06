@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Thori'del
+{% endblock title %}
+
+{% block content %}
+    <div class="first-content">
+        <div class="pic home-picture" style="background: url({% static 'images/homebg.jpg' %});">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>New Blog</h3>
+            </div>
+        </div>
+    </div>
+    <div class="form-div">
+        <form class="form-signin" method="post" action=".">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title"><strong>Title</strong></label>
+                <input type="text" id="title" class="form-control" placeholder="Title" name="title" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="body">Blog</label>
+                <textarea type="text" id="body" class="form-control" name="body" rows="12"></textarea>
+            </div>
+
+            <button class="btn btn-info btn-lg btn-block" type="submit">Push</button>
+        </form>
+    </div>
+{% endblock content %}

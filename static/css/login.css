@@ -1,11 +1,11 @@
 .form-div {
-  height: 500px;
+  height:600px;
 }
 
 .form-signin {
   width: 100%;
   max-width: 1000px;
-  padding: 100px;
+  padding: 40px;
   margin: auto;
 }
 

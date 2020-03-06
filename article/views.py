@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import Article
+from .forms import ArticlePostForm
+from django.contrib.auth.models import User
 
 
 def article_list(request):
@@ -11,7 +13,19 @@ def article_list(request):
 
 
 def article_create(request):
-    return HttpResponse('this is article create page')
+    if request.method == 'POST':
+        new_article_form = ArticlePostForm(data=request.POST)
+        if new_article_form.is_valid():
+            new_article = new_article_form.save(commit=False)
+            new_article.author = User.objects.get(id=1)
+            new_article.save()
+            return redirect("article:article_list")
+        else:
+            return HttpResponse("error")
+    else:
+        new_article_form = ArticlePostForm()
+        context = { 'article_post_form': new_article_form }
+        return render(request, 'blog/new_blog.html', context)
 
 
 def article_detail(request, id):

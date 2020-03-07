@@ -38,5 +38,10 @@ def article_update(request):
     return HttpResponse('this is article update page')
 
 
-def article_delete(request):
-    return HttpResponse('this is article delete page')
+def article_safe_delete(request, id):
+    if request.method == 'POST':
+        article = Article.objects.get(id=id)
+        article.delete()
+        return redirect('article:article_list')
+    else:
+        return HttpResponse('error')

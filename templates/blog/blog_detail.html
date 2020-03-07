@@ -18,6 +18,14 @@
       <div class="container">
         <h3> {{ article.title }}</h3>
         <span>{{ article.created }} </span>
+        <span style="text-transform: uppercase;">{{ article.author }}</span>
+        {% if user.is_authenticated %}
+          <span style="text-align: right; text-transform: uppercase;">Operations: &nbsp;<a href="#" onclick="confirm_delete()">Delete</a>&nbsp;&nbsp;<a href="#">Update</a></span>
+          <form style="display:none;" id="safe_delete" action="{% url 'article:article_safe_delete' article.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Send</button>
+          </form>
+        {% endif %}
         <p> "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, <br>
           tur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" 
         </p>
@@ -125,4 +133,18 @@
         </form>
       </div>
     </div>
+    <script>
+      function confirm_delete() {
+        layer.confirm('Are you sure to delete this blog? ', {
+          btn: ['Yes','No']
+        }, function(index, layero) {
+          layer.msg('Deleting...', {
+            icon: 1,
+            time:1500
+          }, function() {
+            $('form#safe_delete button').click();
+          });
+        });
+      }
+    </script>
 {% endblock content %}

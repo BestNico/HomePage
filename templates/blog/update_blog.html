@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Thori'del
+{% endblock title %}
+
+{% block content %}
+    <div class="first-content">
+      <div class="pic blog1-picture" style="background: url({% static 'images/pic10.png' %});">
+        <div class="overlay"></div>
+        <div class="content">
+          <h3>{{ article.title }}-Update</h3>
+        </div>
+      </div>
+    </div>
+    <div class="form-div">
+        <form class="form-signin" id="update" method="post" action=".">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title"><strong>Title</strong></label>
+                <input type="text" id="title" class="form-control" placeholder="Title" name="title" value="{{ article.title }}" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="body">Blog</label>
+                <textarea style="resize:none;" type="text" id="body" class="form-control" name="body" rows="12">{{ article.body }}</textarea>
+            </div>
+
+            <button class="btn btn-info btn-lg btn-block" type="submit">Update</button>
+        </form>
+    </div>
+{% endblock content %}

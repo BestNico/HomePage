@@ -702,6 +702,10 @@ header .menu ul li ul li ul {
     font-size: 25px;
     color: #7C4337;
 }
+.blogdata a {
+    color: #7C4337;
+    font-family: 'Raleway', sans-serif;
+}
 .blogsection2 h5 {
     font-style: italic;
     font-size: 25px;

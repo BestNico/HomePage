@@ -271,7 +271,7 @@ ol {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 11px;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;

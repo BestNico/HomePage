@@ -19,6 +19,7 @@ def article_create(request):
             new_article = new_article_form.save(commit=False)
             new_article.author = User.objects.get(id=1)
             new_article.save()
+            new_article_form.save_m2m()
             return redirect("article:article_list")
         else:
             return HttpResponse("error")

@@ -34,8 +34,22 @@ def article_detail(request, id):
     return render(request, 'blog/blog_detail.html', context)
 
 
-def article_update(request):
-    return HttpResponse('this is article update page')
+def article_update(request, id):
+    article = Article.objects.get(id=id)
+    if request.method == 'POST':
+        article_form = ArticlePostForm(data=request.POST)
+        if article_form.is_valid():
+            article.title = request.POST['title']
+            article.body = request.POST['body']
+            article.save()
+            return redirect("article:article_detail", id=id)
+        else:
+            # TODO: Fix popup function
+            return HttpResponse("表单内容有误，请重新填写。")
+    else:
+        article_form = ArticlePostForm()
+        context = { 'article':article, 'article_form':article_form }
+        return render(request, 'blog/update_blog.html', context)
 
 
 def article_safe_delete(request, id):

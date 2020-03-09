@@ -26,7 +26,7 @@
             <button type="submit">Send</button>
           </form>
         {% endif %}
-        <p>{{ article.body }}</p>
+        <p>{{ article.body|safe }}</p>
       </div>
     </div>
     <div class="picbackground">

@@ -263,6 +263,27 @@ ol {
     margin: 40px auto;
 }
 
+.btn-category {
+    margin: 10px auto;
+}
+
+.btn-category .load-more{
+    padding: 5px 5px 5px 5px;
+    border: 2px solid #aba5a5;
+    color: #968f8f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 11px;
+    /* letter-spacing: 2px; */
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    background: transparent;
+    outline: 0;
+}
+
 .btn-load-more .load-more{
     padding: 10px 20px 10px 20px;
     border: 2px solid #aba5a5;

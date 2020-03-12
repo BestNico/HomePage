@@ -24,10 +24,17 @@
                         </div>
                         <div class="pic-inner">
                             <h3><a href="blog1.html">{{ article.title }} </a></h3>
-                            <span>{{ article.created }}</span>
+                            {% if article.category %}
+                                <div class="btn-category">
+                                    <a class="load-more" href="#">{{ article.category }}</a>
+                                </div>
+                            {% endif %}
+                            <span>{{ article.created|date:'Y-m-d' }}</span>
+                            <span style="float: right;">Tags:
                             {% for tag in article.tags.all %}
-                                <span style="float: right;">Tags: <a style="color: #763A31;" href="#">{{ tag }}</a></span>
+                                 <a style="color: #763A31;" href="#">{{ tag }}</a>
                             {% endfor %}
+                            </span>
                             <p>{{ article.body|slice:'300' }}... </p>
                             <div class="btn-load-more">
                                 <a class="load-more" href={% url 'article:article_detail' article.id %}>Read More..</a>

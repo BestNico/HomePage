@@ -17,7 +17,7 @@
     <div class="blogdata">
       <div class="container">
         <h3> {{ article.title }}</h3>
-        <span>{{ article.created }} </span>
+        <span>{{ article.created|date:'Y-m-d' }} </span>
         <span style="text-transform: uppercase;">{{ article.author }}</span>
         {% if user.is_authenticated %}
           <span style="text-align: right; text-transform: uppercase;">Operations: &nbsp;<a href="#" onclick="confirm_delete()">Delete</a>&nbsp;|&nbsp;<a href="{% url 'article:article_update' article.id %}">Update</a></span>

@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from .models import Article
+from .models import Article, ArticleCategory
 from .forms import ArticlePostForm
 from django.contrib.auth.models import User
 import markdown
@@ -19,6 +19,8 @@ def article_create(request):
         if new_article_form.is_valid():
             new_article = new_article_form.save(commit=False)
             new_article.author = User.objects.get(id=1)
+            if request.POST['category'] != 'none':
+                new_article.category = ArticleCategory.objects.get(id=request.POST['category'])
             new_article.save()
             new_article_form.save_m2m()
             return redirect("article:article_list")
@@ -26,7 +28,8 @@ def article_create(request):
             return HttpResponse("error")
     else:
         new_article_form = ArticlePostForm()
-        context = { 'article_post_form': new_article_form }
+        categorys = ArticleCategory.objects.all()
+        context = { 'article_post_form': new_article_form, 'categorys': categorys }
         return render(request, 'blog/new_blog.html', context)
 
 
@@ -48,6 +51,11 @@ def article_update(request, id):
         if article_form.is_valid():
             article.title = request.POST['title']
             article.body = request.POST['body']
+            article.tags.set(*request.POST.get('tags').split(','), clear=True)
+            if request.POST['category'] != 'none':
+                article.category = ArticleCategory.objects.get(id=request.POST['category'])
+            else:
+                article.category = None
             article.save()
             return redirect("article:article_detail", id=id)
         else:
@@ -55,7 +63,9 @@ def article_update(request, id):
             return HttpResponse("表单内容有误，请重新填写。")
     else:
         article_form = ArticlePostForm()
-        context = { 'article':article, 'article_form':article_form }
+        tags = ','.join([tag for tag in article.tags.names()])
+        categorys = ArticleCategory.objects.all()
+        context = { 'article':article, 'article_form':article_form, 'tags': tags, 'categorys': categorys }
         return render(request, 'blog/update_blog.html', context)
 
 

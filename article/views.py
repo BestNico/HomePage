@@ -5,6 +5,8 @@ from .forms import ArticlePostForm
 from django.contrib.auth.models import User
 import markdown
 
+from django.views import View
+
 
 def article_list(request):
     articles = Article.objects.all()
@@ -76,3 +78,11 @@ def article_safe_delete(request, id):
         return redirect('article:article_list')
     else:
         return HttpResponse('error')
+
+
+class likesView(View):
+    def post(self, request, *args, **kwargs):
+        article = Article.objects.get(id=kwargs.get('id'))
+        article.like += 1
+        article.save()
+        return HttpResponse('success')

@@ -31,6 +31,8 @@
         <script src="{% static 'js/main.js' %}"></script>
         <script src="{% static 'layer/layer.js' %}"></script>
 
+        {% block script %}{% endblock script %}
+
         {% include 'back_to_top.html' %}
 
     </body>

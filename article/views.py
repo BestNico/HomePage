@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Article, ArticleCategory
 from .forms import ArticlePostForm
 from django.contrib.auth.models import User
+from PIL import Image
 import markdown
 
 from django.views import View
@@ -17,10 +18,10 @@ def article_list(request):
 
 def article_create(request):
     if request.method == 'POST':
-        new_article_form = ArticlePostForm(data=request.POST)
+        new_article_form = ArticlePostForm(request.POST, request.FILES)
         if new_article_form.is_valid():
             new_article = new_article_form.save(commit=False)
-            new_article.author = User.objects.get(id=1)
+            new_article.author = User.objects.get(id=request.user.id)
             if request.POST['category'] != 'none':
                 new_article.category = ArticleCategory.objects.get(id=request.POST['category'])
             new_article.save()

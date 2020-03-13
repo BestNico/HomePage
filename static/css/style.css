@@ -607,7 +607,11 @@ header .menu ul li ul li ul {
     border: 1px solid #ddd;
     border-top: none;
     margin-bottom: 30px;
-    padding: 10px 25px;
+    padding: 51px 25px;
+}
+.blog-firstsection .pic-inner .auth-span {
+    float: right;
+    right: 0;
 }
 .blog-firstsection .pic-inner h3 {
     font-size: 30px;
@@ -670,7 +674,7 @@ header .menu ul li ul li ul {
     width:100%;
 }
 .blog-firstsection .pic-inner p {
-    padding-top: 10px;
+    padding-top: 15px;
 }
 .blog-firstsection .items2 {
     padding-top: 40px;

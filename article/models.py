@@ -19,6 +19,7 @@ class Article(models.Model):
     #body = models.TextField()
     body = MDTextField()
     tags = TaggableManager(blank=True)
+    like = models.PositiveIntegerField(default=0)
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
 

@@ -39,6 +39,11 @@
                             <div class="btn-load-more">
                                 <a class="load-more" href={% url 'article:article_detail' article.id %}>Read More..</a>
                             </div>
+                            <p class="auth-span">
+                                <span style="margin-right: 20px;"><i class="fa fa-user" style="font-size:15px">&nbsp;{{ article.author }}</i></span>
+                                <span style="margin-right: 20px;"><i class="fa fa-clock-o" style="font-size:15px"></i> {{ article.created|date:'Y-m-d H:i'}}</span>	<span style="margin-right: 20px;"><i class="fa fa-eye" style="font-size:15px"></i> 994</span>	<span style="margin-right: 20px;"><i class="fa fa-comments-o" style="font-size:15px"></i> <a target="_blank" href="#">0评论</a></span>
+                                <span style="margin-right: 20px;"><i class="fa fa-heart-o" style="font-size: 15px;"></i><a href="javascript:;" data-action="ding" data-id="8947" id="Addlike" class="action actived"><span class="count">13</span>喜欢</a></span>
+                            </p>
                         </div>
                     {% endfor %}
                 </div>

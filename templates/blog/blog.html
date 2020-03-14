@@ -46,7 +46,7 @@
                             <p class="auth-span">
                                 <span style="margin-right: 20px;"><i class="fa fa-user" style="font-size:15px;"></i>&nbsp;{{ article.author }}</span>
                                 <span style="margin-right: 20px;"><i class="fa fa-clock-o" style="font-size:15px"></i> {{ article.created|date:'Y-m-d H:i'}}</span>	<span style="margin-right: 20px;"><i class="fa fa-eye" style="font-size:15px"></i> 994</span>	<span style="margin-right: 20px;"><i class="fa fa-comments-o" style="font-size:15px"></i> <a target="_blank" href="#">0评论</a></span>
-                                <span style="margin-right: 20px;"><i class="fa fa-heart-o" style="font-size: 15px;"></i>
+                                <span style="margin-right: 20px;"><i id="heart" class="fa fa-heart-o" style="font-size: 15px;"></i>
                                     <a href="javascript:;"
                                     onclick="validate_is_like(
                                         '{% url 'article:likes' article.id %}',
@@ -96,6 +96,8 @@
                 return;
             } else {
                 // 用 Jquery 找到点赞数量，并 +1
+                $('#heart').attr("class", "fa fa-heart");
+                $("#heart").css({'font-size': '15px', 'color': 'red'});
                 $('span#likes_number').text(likes + 1).css('color', '#dc3545');
             }
             // 用 ajax 向后端发送 post 请求

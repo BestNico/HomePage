@@ -38,6 +38,8 @@ def article_create(request):
 
 def article_detail(request, id):
     article = Article.objects.get(id=id)
+    article.total_views += 1
+    article.save(update_fields=['total_views'])
     article.body = markdown.markdown(article.body,extensions=[
                                 'markdown.extensions.extra',
                                 'markdown.extensions.codehilite',

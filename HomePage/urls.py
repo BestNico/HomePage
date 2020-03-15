@@ -25,6 +25,7 @@ urlpatterns = [
     path('article/', include('article.urls', namespace='article')),
     path('userprofile/', include('userProfile.urls', namespace='userprofile')),
     path(r'mdeditor/', include('mdeditor.urls')),
+    path(r'comment/', include('comment.urls', namespace='comment')),
 ]
 
 if settings.DEBUG:

@@ -73,10 +73,11 @@
     <div class="blogsection4">
       <div class="container">
         <div class="items">
-          <h3> 2 Comments</h3>
+          <h3>{{ comment_nums }} Comments</h3>
           <p>Join the discussion and tell us your opinion.</p>
         </div>
         <div class="row">
+          {% for comment in comments %}
           <div class="col-md-2">
             <div class="picture">
               <img src={% static 'images/portret22.png' %} alt="">
@@ -84,43 +85,32 @@
           </div>
           <div class="col-md-10">
           <div class="txt">
-            <h5>Edi Smith</h5>
-            <span>Friday at 01:00 PM</span>
-            <p>Great Theme!</p>
+              <h5>{{ comment.user }}</h5>
+              <span>{{ comment.created|date:'Y-m-d H:i:s' }}</span>
+              <p>{{ comment.message }}</p>
             </div>
           </div>
-        </div>
-         <div class="row items4">
-          <div class="col-md-2">
-            <div class="picture">
-              <img src={% static 'images/portreti23.png' %} alt="">
-            </div>
-          </div>
-          <div class="col-md-10">
-          <div class="txt">
-            <h5>Kate Atkins</h5>
-            <span>Monday at 10:00 AM</span>
-            <p>Nice job Guys, i love it so much very simple template!</p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
+    </div>
     </div>
     <div class="contact-content">
       <div class="container">
       <h5 class="item">Leave a reply</h5>
-          <form class="row" action="#">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <input placeholder="Name" type="text" name="firstname"> <br>
+          <form class="row" action="{% url 'comment:post_comment' article.id %}" method="POST">
+          {% csrf_token %}
+                <div for="user" class="col-md-4 col-sm-4 col-xs-12">
+                    <input placeholder="Name" type="text" id="user" name="user"> <br>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <input placeholder="Email" type="text" name="email"> <br>
+                <div for="mail" class="col-md-4 col-sm-4 col-xs-12">
+                    <input placeholder="Email" type="text" id="mail" name="mail"> <br>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <input placeholder="Subject" type="text" name="subject"> <br>
                 </div>
-                <div class="col-md-12 form-area">
-                    <textarea placeholder="Message" name="message"></textarea>
+                <div for="message" class="col-md-12 form-area">
+                    <textarea placeholder="Message" id="message" name="message"></textarea>
                     <input type="submit" value="Comment">
                 </div>
         </form>

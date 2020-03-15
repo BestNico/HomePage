@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 import markdown
 
 from django.views import View
+from comment.models import Comment
 
 
 def article_list(request):
@@ -46,7 +47,9 @@ def article_detail(request, id):
                                 'markdown.extensions.codehilite',
                                 'markdown.extensions.toc',
                             ])
-    context = { 'article':article }
+    comments = Comment.objects.filter(article=id)
+    comment_nums = comments.count()
+    context = { 'article':article, 'comments':comments, 'comment_nums':comment_nums }
     return render(request, 'blog/blog_detail.html', context)
 
 

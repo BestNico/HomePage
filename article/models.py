@@ -21,6 +21,7 @@ class Article(models.Model):
     body = MDTextField()
     tags = TaggableManager(blank=True)
     like = models.PositiveIntegerField(default=0)
+    total_views = models.PositiveIntegerField(default=0)
     avatar = models.ImageField(upload_to='article/%Y%m%d/', blank=True)
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)

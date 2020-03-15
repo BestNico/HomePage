@@ -46,7 +46,7 @@
                             <p class="auth-span">
                                 <span style="margin-right: 20px;"><i class="fa fa-user" style="font-size:15px;"></i>&nbsp;{{ article.author }}</span>
                                 <span style="margin-right: 20px;"><i class="fa fa-clock-o" style="font-size:15px"></i> {{ article.created|date:'Y-m-d H:i'}}</span>	<span style="margin-right: 20px;"><i class="fa fa-eye" style="font-size:15px"></i> {{ article.total_views }}</span>	<span style="margin-right: 20px;"><i class="fa fa-comments-o" style="font-size:15px"></i> <a target="_blank" href="#">0评论</a></span>
-                                <span style="margin-right: 20px;"><i id="heart" class="fa fa-heart-o" style="font-size: 15px;"></i>
+                                <span><i id="heart" class="fa fa-heart-o" style="font-size: 15px;"></i>
                                     <a href="javascript:;"
                                     onclick="validate_is_like(
                                         '{% url 'article:likes' article.id %}',

@@ -4,6 +4,7 @@ from .models import Article, ArticleCategory
 from .forms import ArticlePostForm
 from django.contrib.auth.models import User
 from PIL import Image
+from django.contrib.auth.decorators import login_required
 import markdown
 
 from django.views import View
@@ -49,8 +50,11 @@ def article_detail(request, id):
     return render(request, 'blog/blog_detail.html', context)
 
 
+@login_required(login_url='/userprofile/login/')
 def article_update(request, id):
     article = Article.objects.get(id=id)
+    if request.user != article.author:
+        return redirect('userprofile:login')
     if request.method == 'POST':
         article_form = ArticlePostForm(data=request.POST)
         if article_form.is_valid():
@@ -74,6 +78,7 @@ def article_update(request, id):
         return render(request, 'blog/update_blog.html', context)
 
 
+@login_required(login_url='/userprofile/login/')
 def article_safe_delete(request, id):
     if request.method == 'POST':
         article = Article.objects.get(id=id)

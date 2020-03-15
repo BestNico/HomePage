@@ -19,7 +19,7 @@
         <h3> {{ article.title }}</h3>
         <span>{{ article.created|date:'Y-m-d' }} </span>
         <span style="text-transform: uppercase;">{{ article.author }}</span>
-        {% if user.is_authenticated %}
+        {% if user == article.author %}
           <span style="text-align: right; text-transform: uppercase;">Operations: &nbsp;<a href="#" onclick="confirm_delete()">Delete</a>&nbsp;|&nbsp;<a href="{% url 'article:article_update' article.id %}">Update</a></span>
           <form style="display:none;" id="safe_delete" action="{% url 'article:article_safe_delete' article.id %}" method="POST">
             {% csrf_token %}

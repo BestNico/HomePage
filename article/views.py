@@ -1,18 +1,28 @@
+import markdown
+from PIL import Image
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import Article, ArticleCategory
 from .forms import ArticlePostForm
 from django.contrib.auth.models import User
-from PIL import Image
 from django.contrib.auth.decorators import login_required
-import markdown
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views import View
 from comment.models import Comment
 
 
 def article_list(request):
-    articles = Article.objects.all()
+    article_list = Article.objects.all()
+    pagnitor = Paginator(article_list, 3)
+    page = request.GET.get('page')
+
+    try:
+        articles = pagnitor.page(page)
+    except PageNotAnInteger:
+        articles = pagnitor.page(1)
+    except EmptyPage:
+        articles = pagnitor.page(pagnitor.num_pages)
+    
     context = {'articles': articles}
     # return render(request, 'article/list.html', context)
     return render(request, 'blog/blog.html', context)

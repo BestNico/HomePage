@@ -67,11 +67,20 @@
             </div>
         </div>
     </div>
-    <div class="btn-load-more">
-        <button class="load-more">
-        Load More
-        </button>
-    </div>
+    {% if articles.has_previous %}
+        <div class="btn-load-more">
+            <a class="load-more" href="?page={{ articles.previous_page_number }}">
+            Forward  
+            </a>
+        </div>
+    {% endif %}
+    {% if articles.has_next %}
+        <div class="btn-load-more">
+            <a class="load-more" href="?page={{ articles.next_page_number }}">
+            Load More
+            </a>
+        </div>
+    {% endif %}
 
 {% endblock content %}
 

@@ -1,0 +1,520 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="主页, 牛奶法斗">
+  <meta name="description" content="主页 | 牛奶法斗">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Homepage | BestNico</title>
+  <link rel="icon" href="logo.ico">
+
+  <link rel="stylesheet" href="{% static 'homepage/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'homepage/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'homepage/webfonts/textfont/nova.css' %}">
+  <link rel="stylesheet" href="{% static 'homepage/css/animate.min.css' %}">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+  <style>
+    ::-webkit-scrollbar {width: 6px;cursor: auto}
+    ::-webkit-scrollbar-track {background: rgb(27, 17, 42); }
+    ::-webkit-scrollbar-thumb {background:transparent; }
+    ::-webkit-scrollbar-thumb:hover {background: rgba(255, 75, 168,.75); }
+    </style>
+    
+</head>
+    
+<body>
+  <div class="pos-f-t d-md-none toggle-sm">
+    <div class="collapse" id="toggle-sm">
+
+      <div class=" p-4">
+        <ul class="list-unstyled navigate">
+          <li>About</li>
+          <li>Blog</li>
+          <li>Skill</li>
+          <li>Contact</li>
+        </ul>
+        <ul class="ico-social  list-unstyled mt-1">
+          <li><a href=""><i class="fab fa-facebook-f "></i></a></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+          <li><a href=""><i class="fab fa-github"></i></a></li>
+          <li><a href=""><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggle-sm" aria-controls="toggle-sm"
+        aria-expanded="false" aria-label="toggle-sm">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-12  d-none d-md-inline-block  col-md-3   col-lg-2 nav-left wow fadeInLeft " data-wow-duration="1.5s">
+
+        <img src="static/homepage/images/avatar3.png" alt="avatar2" class="img-fluid d-block ">
+
+        <ul class="list-unstyled navigate">
+          <li>About</li>
+          <li>Blog</li>
+          <li>Skill</li>
+          <li>Contact</li>
+        </ul>
+
+        <ul class="ico-social  list-unstyled  ">
+          <li><a href=""><i class="fab fa-facebook-f "></i></a></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+          <li><a href=""><i class="fab fa-github"></i></a></li>
+          <li><a href=""><i class="fab fa-instagram"></i></a></li>
+        </ul>
+          
+        
+      </div>
+
+      <!--end  nav left-->
+
+      <!-- right element-->
+      <div class="col-12  col-md-9 col-lg-10  right-element ">
+
+        <section class="section-about">
+
+          <div class="container">
+
+            <h2 class="h1 about-h wow fadeInRight">About</h2>
+
+            <div class="row">
+
+              <div class=" col-md-7 wow fadeInRight">
+
+                <h2 class="h1 about-h-2">BestNico<span>.</span></h2>
+
+                <h3>Python / JS Developer</h3>
+
+                <p class="lead">Currently working on Tokyo and focus on Web appication and Marchine Learning.<span>
+                    I love Python</span> and <span>JS/TS.</span>
+                  </p>
+
+                <a href={% url 'home:index' %} class="btn bt1 hvr-grow">Go to Blog</a>
+
+                <a href="" class="btn bt2 hvr-grow ">Know more</a>
+
+                <!-- skill start -->
+                <div class="my-skills">
+                    <div class="title center-align" data-aos="zoom-in-up">
+                        <i class="fa fa-book"></i>&nbsp;&nbsp;My Skill
+                    </div>
+                    <div>
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #42A5F5 0%, #7FFFD4 100%); width: 80%">
+                                    <span>Python</span>
+                                </div>
+                                <div class="skill-bar-percent">85%</div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FFA500 0%, #FFE4B5 100%); width: 80%">
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="skill-bar-percent">80%</div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #00CED1 0%, #AFEEEE 100%); width: 80%">
+                                    <span>HTML5</span>
+                                </div>
+                                <div class="skill-bar-percent">80%</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 50%">
+                                    <span>CSS</span>
+                                </div>
+                                <div class="skill-bar-percent">50%</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 60%">
+                                    <span>TypeScript</span>
+                                </div>
+                                <div class="skill-bar-percent">60%</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 30%">
+                                    <span>Ali Cloud</span>
+                                </div>
+                                <div class="skill-bar-percent">30%</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 15%">
+                                    <span>ML</span>
+                                </div>
+                                <div class="skill-bar-percent">15%</div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 30%">
+                                    <span>Java</span>
+                                </div>
+                                <div class="skill-bar-percent">30%</div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
+                </div>
+                <!-- skill end -->
+
+                <div class="end-about">
+
+                  <img src="static/homepage/images/icon/q.png" alt="client4">
+
+                  <span class="h3">If you really want it.</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+        <!-- start work section-->
+        <section class="section-work  ">
+
+          <div class="container text-center">
+            <h2 class="h1 work-h">Work</h2>
+
+            <div class="row">
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/frerrero.png" class="img-fluid" alt="Frerrero PSD Template">
+
+                  <h5>Frerrero PSD Template</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/power-pen.png" class="img-fluid" alt="Power of pen tools">
+
+                  <h5>Power of pen tools</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/designer-fav.png" class="img-fluid" alt="Designer Favorite Tools">
+
+                  <h5>Designer Favorite Tools</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/workspace.png" class="img-fluid" alt="Office Workspace">
+
+                  <h5>Office Workspace</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/velocity.png" class="img-fluid" alt="Velocity 6 Template">
+
+                  <h5>Velocity 6 Template</h5>
+
+                </div>
+
+              </div>
+
+              <div class="col-12  col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/installation-infographic.png" class="img-fluid" alt="Installation Infographic">
+
+                  <h5>Installation Infographic</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/favorite-di.png" class="img-fluid" alt="Designer Favorite">
+
+                  <h5>Designer Favorite</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/france.png" style="height: 170px" class="img-fluid" alt="France Template">
+
+                  <h5>France Template</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/happy-freelance-designer.png" class="img-fluid" alt="Happy Freelance">
+
+                  <h5>Happy Freelance Designer</h5>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- end work section-->
+
+        <!-- labs section-->
+
+        <section class="section-labs ">
+
+          <div class="container">
+            <h2 class="h1 labs-h">Labs</h2>
+
+            <div class="row">
+
+              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
+                <div class="card" style="width: 100%;">
+                  <img class="card-img-top" src="static/homepage/images/labs/colorsup.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>Colorsup</h5>
+                    <p class="card-text">example text to build on the card title and make up the bulk of the card's
+                      content.
+                      <a href="">check now</a>
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
+                <div class="card" style="width: 100%;">
+                  <img class="card-img-top" src="static/homepage/images/labs/grasp8.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>Colorsup</h5>
+                    <p class="card-text"> example text to build on the card title and make up the bulk of the card's
+                      content.
+                      <a href="">check now</a>
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
+                <div class="card" style="width: 100%;">
+                  <img class="card-img-top" src="static/homepage/images/labs/colorsup.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>Colorsup</h5>
+                    <p class="card-text">example text to build on the card title and make up the bulk of the card's
+                      content.
+                      <a href="">check now</a>
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
+                <div class="card" style="width: 100%">
+                  <img class="card-img-top" src="static/homepage/images/labs/fmradio.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>Colorsup</h5>
+                    <p class="card-text"> example text to build on the card title and make up the bulk of the card's
+                      content.
+                      <a href="">check now</a>
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
+                <div class="card" style="width: 100%">
+                  <img class="card-img-top" src="static/homepage/images/labs/zikan.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>Colorsup</h5>
+                    <p class="card-text">example text to build on the card title and make up the bulk of the card's
+                      content.
+                      <a href="">check now</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
+                <div class="card" style="width: 100%">
+                  <img class="card-img-top" src="static/homepage/images/labs/fmradio.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>Colorsup</h5>
+                    <p class="card-text"> example text to build on the card title and make up the bulk of the card's
+                      content.
+                      <a href="">check now</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--end  labs section-->
+
+        <!--start contact section-->
+
+        <section class="section-contact  " data-wow-duration="1.5s">
+
+          <div class="container">
+            <h2 class="h1 contact-h  wow fadeInRight">Contact</h2>
+            <h3 class="wow fadeInRight"> Project brief description </h3>
+
+            <div class="form-group wow fadeInRight">
+              <textarea class="form-control" placeholder="Project Type, Target customer, Timeline, estimate etc"></textarea>
+            </div>
+
+            <h3 class=" wow fadeInRight"> About You</h3>
+
+            <div class="row  wow fadeInRight">
+
+              <div class="col-sm-12 col-lg-6 ">
+
+                <div class="form-group">
+                  <input type="text" placeholder="Full Name" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Company Name" class="form-control">
+                </div>
+                  
+              </div>
+
+              <div class="col-sm-12 col-lg-6 ">
+
+                <div class="form-group">
+                  <input type="text" placeholder="Email Address" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Position" class="form-control">
+                </div>
+
+              </div>
+            </div>
+            <div class=" wow fadeInRight">
+              <a href="#" class="btn hvr-grow ">Request a Quote</a>
+              <div class="social ">
+                <a href=""><i style="margin-left:10px" class="fab fa-facebook-f "></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-github"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!--end contact section-->
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'homepage/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'homepage/js/popper.min.js' %}"></script>
+  <script src="{% static 'homepage/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'homepage/js/jquery.nicescroll.js' %}"></script>
+  <script src="{% static 'homepage/js/plugin.js' %}"></script>
+  <script src="{% static 'homepage/js/wow.min.js' %}"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="{% static 'libs/others/clicklove.js' %}"></script>
+
+  <script>
+      
+    $('.section-labs').hide();
+    $('.section-work').hide();
+    $('.section-contact').hide();
+    new WOW().init();
+  </script>
+  <script>
+    AOS.init({
+        easing: 'ease-in-out-sine',
+        duration: 700,
+        delay: 100
+    });
+  </script>
+    
+</body>
+
+</html>

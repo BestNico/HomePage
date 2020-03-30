@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'HomePage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "HomePage",
-        'USER': 'root',
-        'PASSWORD': '12345678',
+        'NAME': "mysql",
+        'USER': 'mysql',
+        'PASSWORD': 'mysql',
         'HOST': 'localhost',
         'PORT': 3306,
     }

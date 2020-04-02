@@ -65,8 +65,8 @@
 
         <ul class="list-unstyled navigate">
           <li>About</li>
+          <li>Other</li>
           <li>Blog</li>
-          <li>Skill</li>
           <li>Contact</li>
         </ul>
 
@@ -125,16 +125,16 @@
                         <div class="col s12 m6 l6" data-aos="fade-up">
                             <div class="skillbar">
                                 <div class="skillbar-title"
-                                    style="background: linear-gradient(to right, #FFA500 0%, #FFE4B5 100%); width: 80%">
+                                    style="background: linear-gradient(to right, #FFA500 0%, #FFE4B5 100%); width: 70%">
                                     <span>JavaScript</span>
                                 </div>
-                                <div class="skill-bar-percent">80%</div>
+                                <div class="skill-bar-percent">70%</div>
                             </div>
                         </div>
                         <div class="col s12 m6 l6" data-aos="fade-up">
                             <div class="skillbar">
                                 <div class="skillbar-title"
-                                    style="background: linear-gradient(to right, #00CED1 0%, #AFEEEE 100%); width: 80%">
+                                    style="background: linear-gradient(to right, #00CED1 0%, #AFEEEE 100%); width: 70%">
                                     <span>HTML5</span>
                                 </div>
                                 <div class="skill-bar-percent">80%</div>
@@ -168,7 +168,7 @@
                             <div class="skillbar">
                                 <div class="skillbar-title"
                                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 30%">
-                                    <span>Ali Cloud</span>
+                                    <span>AliCloud</span>
                                 </div>
                                 <div class="skill-bar-percent">30%</div>
                             </div>
@@ -345,90 +345,27 @@
         <section class="section-labs ">
 
           <div class="container">
-            <h2 class="h1 labs-h">Labs</h2>
+            <h2 class="h1 labs-h">Blog</h2>
 
             <div class="row">
+              {% for blog in blog_list %}
+                <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
+                  <div class="card" style="width: 100%;">
+                    {% if blog.avatar %}
+                    <img class="card-img-top" src="{{ blog.avatar.url }}" alt="Card image cap">
+                    {% else %}
+                    <img class="card-img-top" src="{% static 'images/kafiato.jpg' %}" alt="">
+                    {% endif %}
+                    <div class="card-body">
+                      <h5>{{ blog.title }}</h5>
+                      <p class="card-text">{{ blog.body|slice:'20' }}
+                        <a href="{% url 'home:blog_detail' blog.id %}">Read more</a>
+                      </p>
 
-              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
-                <div class="card" style="width: 100%;">
-                  <img class="card-img-top" src="static/homepage/images/labs/colorsup.png" alt="Card image cap">
-                  <div class="card-body">
-                    <h5>Colorsup</h5>
-                    <p class="card-text">example text to build on the card title and make up the bulk of the card's
-                      content.
-                      <a href="">check now</a>
-                    </p>
-
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
-                <div class="card" style="width: 100%;">
-                  <img class="card-img-top" src="static/homepage/images/labs/grasp8.png" alt="Card image cap">
-                  <div class="card-body">
-                    <h5>Colorsup</h5>
-                    <p class="card-text"> example text to build on the card title and make up the bulk of the card's
-                      content.
-                      <a href="">check now</a>
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
-                <div class="card" style="width: 100%;">
-                  <img class="card-img-top" src="static/homepage/images/labs/colorsup.png" alt="Card image cap">
-                  <div class="card-body">
-                    <h5>Colorsup</h5>
-                    <p class="card-text">example text to build on the card title and make up the bulk of the card's
-                      content.
-                      <a href="">check now</a>
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
-                <div class="card" style="width: 100%">
-                  <img class="card-img-top" src="static/homepage/images/labs/fmradio.png" alt="Card image cap">
-                  <div class="card-body">
-                    <h5>Colorsup</h5>
-                    <p class="card-text"> example text to build on the card title and make up the bulk of the card's
-                      content.
-                      <a href="">check now</a>
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
-                <div class="card" style="width: 100%">
-                  <img class="card-img-top" src="static/homepage/images/labs/zikan.png" alt="Card image cap">
-                  <div class="card-body">
-                    <h5>Colorsup</h5>
-                    <p class="card-text">example text to build on the card title and make up the bulk of the card's
-                      content.
-                      <a href="">check now</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
-                <div class="card" style="width: 100%">
-                  <img class="card-img-top" src="static/homepage/images/labs/fmradio.png" alt="Card image cap">
-                  <div class="card-body">
-                    <h5>Colorsup</h5>
-                    <p class="card-text"> example text to build on the card title and make up the bulk of the card's
-                      content.
-                      <a href="">check now</a>
-                    </p>
-                  </div>
-                </div>
+              {% endfor %}
               </div>
             </div>
           </div>

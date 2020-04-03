@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="logo">
-                    <h2><a href="{% url 'home:home_page' %}">Thori'del</a></h2>
+                    <h2><a href="{% url 'home:home_page' %}">BestNico</a></h2>
                 </div>
             </div>
             <div class="col-md-8">
@@ -11,7 +11,6 @@
                     <ul>
                         <li><a href={% url 'home:home_page' %} class="active">Home</a></li>
                         <li><a href="{% url 'article:article_list' %}">Blog</a></li>
-                        <li><a href="{% url 'home:contact' %}">Contact</a></li>
                         <li><a href="{% url 'home:about' %}">About</a></li>
                         {% if user.is_authenticated %}
                             <li>

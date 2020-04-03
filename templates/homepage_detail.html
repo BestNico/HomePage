@@ -36,14 +36,13 @@
       <div class=" p-4">
         <ul class="list-unstyled navigate">
           <li>About</li>
+          <li>Resume</li>
           <li>Blog</li>
-          <li>Skill</li>
-          <li>Contact</li>
         </ul>
         <ul class="ico-social  list-unstyled mt-1">
           <li><a href=""><i class="fab fa-facebook-f "></i></a></li>
           <li><a href=""><i class="fab fa-twitter"></i></a></li>
-          <li><a href=""><i class="fab fa-github"></i></a></li>
+          <li><a href="https://github.com/BestNico"><i class="fab fa-github"></i></a></li>
           <li><a href=""><i class="fab fa-instagram"></i></a></li>
         </ul>
       </div>
@@ -66,15 +65,20 @@
 
         <ul class="list-unstyled navigate">
           <li>About</li>
-          <li>Other</li>
+          <li>Resume</li>
           <li>Blog</li>
-          <li>Contact</li>
         </ul>
 
         <ul class="ico-social  list-unstyled  ">
+          <div style='text-align: center; font-size: 10px;'>
+            Copyright © 2020  &nbsp; &nbsp;
+          </div>
+          <div style='text-align: center; font-size: 10px; padding-bottom: 10px;'>
+            辽ICP备20004043号 &nbsp;
+          </div>
           <li><a href=""><i class="fab fa-facebook-f "></i></a></li>
           <li><a href=""><i class="fab fa-twitter"></i></a></li>
-          <li><a href=""><i class="fab fa-github"></i></a></li>
+          <li><a href="https://github.com/BestNico"><i class="fab fa-github"></i></a></li>
           <li><a href=""><i class="fab fa-instagram"></i></a></li>
         </ul>
           
@@ -221,7 +225,7 @@
         <section class="section-work  ">
 
           <div class="container text-center">
-            <h2 class="h1 work-h">Work</h2>
+            <h2 class="h1 work-h">Resume</h2>
 
             <div class="row">
 
@@ -229,7 +233,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/frerrero.png" class="img-fluid" alt="Frerrero PSD Template">
+                  <img src="{% static 'homepage/images/work/frerrero.png' %}" class="img-fluid" alt="Frerrero PSD Template">
 
                   <h5>Frerrero PSD Template</h5>
 
@@ -241,7 +245,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/power-pen.png" class="img-fluid" alt="Power of pen tools">
+                  <img src="{% static 'homepage/images/work/power-pen.png' %}" class="img-fluid" alt="Power of pen tools">
 
                   <h5>Power of pen tools</h5>
 
@@ -253,7 +257,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/designer-fav.png" class="img-fluid" alt="Designer Favorite Tools">
+                  <img src="{% static 'homepage/images/work/designer-fav.png' %}" class="img-fluid" alt="Designer Favorite Tools">
 
                   <h5>Designer Favorite Tools</h5>
 
@@ -265,7 +269,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/workspace.png" class="img-fluid" alt="Office Workspace">
+                  <img src="{% static 'homepage/images/work/workspace.png' %}" class="img-fluid" alt="Office Workspace">
 
                   <h5>Office Workspace</h5>
 
@@ -277,7 +281,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/velocity.png" class="img-fluid" alt="Velocity 6 Template">
+                  <img src="{% static 'homepage/images/work/velocity.png' %}" class="img-fluid" alt="Velocity 6 Template">
 
                   <h5>Velocity 6 Template</h5>
 
@@ -289,7 +293,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/installation-infographic.png" class="img-fluid" alt="Installation Infographic">
+                  <img src="{% static 'homepage/images/work/installation-infographic.png' %}" class="img-fluid" alt="Installation Infographic">
 
                   <h5>Installation Infographic</h5>
 
@@ -301,7 +305,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/favorite-di.png" class="img-fluid" alt="Designer Favorite">
+                  <img src="{% static 'homepage/images/work/favorite-di.png' %}" class="img-fluid" alt="Designer Favorite">
 
                   <h5>Designer Favorite</h5>
 
@@ -313,7 +317,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/france.png" style="height: 170px" class="img-fluid" alt="France Template">
+                  <img src="{% static 'homepage/images/work/france.png' %}" style="height: 170px" class="img-fluid" alt="France Template">
 
                   <h5>France Template</h5>
 
@@ -325,7 +329,7 @@
 
                 <div class="work-contain">
 
-                  <img src="static/homepage/images/work/happy-freelance-designer.png" class="img-fluid" alt="Happy Freelance">
+                  <img src="{% static 'homepage/images/work/happy-freelance-designer.png' %}" class="img-fluid" alt="Happy Freelance">
 
                   <h5>Happy Freelance Designer</h5>
 
@@ -363,59 +367,6 @@
           </div>
         </section>
         <!--end  labs section-->
-
-        <!--start contact section-->
-
-        <section class="section-contact  " data-wow-duration="1.5s">
-
-          <div class="container">
-            <h2 class="h1 contact-h  wow fadeInRight">Contact</h2>
-            <h3 class="wow fadeInRight"> Project brief description </h3>
-
-            <div class="form-group wow fadeInRight">
-              <textarea class="form-control" placeholder="Project Type, Target customer, Timeline, estimate etc"></textarea>
-            </div>
-
-            <h3 class=" wow fadeInRight"> About You</h3>
-
-            <div class="row  wow fadeInRight">
-
-              <div class="col-sm-12 col-lg-6 ">
-
-                <div class="form-group">
-                  <input type="text" placeholder="Full Name" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="text" placeholder="Company Name" class="form-control">
-                </div>
-                  
-              </div>
-
-              <div class="col-sm-12 col-lg-6 ">
-
-                <div class="form-group">
-                  <input type="text" placeholder="Email Address" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="text" placeholder="Position" class="form-control">
-                </div>
-
-              </div>
-            </div>
-            <div class=" wow fadeInRight">
-              <a href="#" class="btn hvr-grow ">Request a Quote</a>
-              <div class="social ">
-                <a href=""><i style="margin-left:10px" class="fab fa-facebook-f "></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-github"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!--end contact section-->
       </div>
     </div>
   </div>
@@ -433,7 +384,6 @@
       
     $('.section-about').hide();
     $('.section-work').hide();
-    $('.section-contact').hide();
     new WOW().init();
   </script>
   <script>

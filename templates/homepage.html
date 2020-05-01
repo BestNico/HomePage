@@ -1,53 +1,373 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>HomePage</title>
-        <link href="../static/bootstrap/css/bootstrap.min.css", rel="stylesheet">
-        <style>
-                .bd-placeholder-img {
-                  font-size: 1.125rem;
-                  text-anchor: middle;
-                  -webkit-user-select: none;
-                  -moz-user-select: none;
-                  -ms-user-select: none;
-                  user-select: none;
-                }
-          
-                @media (min-width: 768px) {
-                  .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                  }
-                }
-        </style>
-        <link href="../static/css/homepage.css" rel="stylesheet">
-    </head>
-    <body class="text-center">
-        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            <header class="masthead mb-auto">
-                <div class="inner">
-                    <h3 class="masthead-brand">Cover</h3>
-                    <nav class="nav nav-masthead justify-content-center">
-                        <a class="nav-link active" href="#">Home</a>
-                        <a class="nav-link" href="#">Features</a>
-                        <a class="nav-link" href="#">Contact</a>
-                    </nav>
-                </div>
-            </header>
-            
-            <main role="main" class="inner cover">
-                <h1 class="cover-heading">Cover your page.</h1>
-                <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-                <p class="lead">
-                    <a href="{% url 'article:article_list' %}" class="btn btn-lg btn-secondary">Learn more</a>
-                </p>
-            </main>
+{% load static %}
 
-            <footer class="mastfoot mt-auto">
-                <div class="inner">
-                    <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="主页, 牛奶法斗">
+  <meta name="description" content="主页 | 牛奶法斗">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Homepage | BestNico</title>
+  <link rel="icon" href="logo.ico">
+
+  <link rel="stylesheet" href="{% static 'homepage/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'homepage/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'homepage/webfonts/textfont/nova.css' %}">
+  <link rel="stylesheet" href="{% static 'homepage/css/animate.min.css' %}">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+  <style>
+    ::-webkit-scrollbar {width: 6px;cursor: auto}
+    ::-webkit-scrollbar-track {background: rgb(27, 17, 42); }
+    ::-webkit-scrollbar-thumb {background:transparent; }
+    ::-webkit-scrollbar-thumb:hover {background: rgba(255, 75, 168,.75); }
+    </style>
+    
+</head>
+    
+<body>
+  <div class="pos-f-t d-md-none toggle-sm">
+    <div class="collapse" id="toggle-sm">
+
+      <div class=" p-4">
+        <ul class="list-unstyled navigate">
+          <li>About</li>
+          <li>Resume</li>
+        </ul>
+        <ul class="ico-social  list-unstyled mt-1">
+          <li><a href=""><i class="fab fa-facebook-f "></i></a></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://github.com/BestNico"><i class="fab fa-github"></i></a></li>
+          <li><a href=""><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggle-sm" aria-controls="toggle-sm"
+        aria-expanded="false" aria-label="toggle-sm">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-12  d-none d-md-inline-block  col-md-3   col-lg-2 nav-left wow fadeInLeft " data-wow-duration="1.5s">
+
+        <img src="static/homepage/images/avatar3.png" alt="avatar2" class="img-fluid d-block ">
+
+        <ul class="list-unstyled navigate">
+          <li>About</li>
+          <li>Resume</li>
+        </ul>
+
+        <ul class="ico-social  list-unstyled  ">
+          <div style='text-align: center; font-size: 10px;'>
+            Copyright © 2020  &nbsp; &nbsp;
+          </div>
+          <div style='text-align: center; font-size: 10px; padding-bottom: 10px;'>
+            辽ICP备20004043号 &nbsp;
+          </div>
+          <li><a href=""><i class="fab fa-facebook-f "></i></a></li>
+          <li><a href=""><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://github.com/BestNico"><i class="fab fa-github"></i></a></li>
+          <li><a href=""><i class="fab fa-instagram"></i></a></li>
+        </ul>
+          
+        
+      </div>
+
+      <!--end  nav left-->
+
+      <!-- right element-->
+      <div class="col-12  col-md-9 col-lg-10  right-element ">
+
+        <section class="section-about">
+
+          <div class="container">
+
+            <h2 class="h1 about-h wow fadeInRight">About</h2>
+
+            <div class="row">
+
+              <div class=" col-md-7 wow fadeInRight">
+
+                <h2 class="h1 about-h-2">BestNico<span>.</span></h2>
+
+                <h3>Python / JS Developer</h3>
+
+                <p class="lead">Currently working on Tokyo and focus on Web appication and Marchine Learning.<span>
+                    I love Python</span> and <span>JS/TS.</span>
+                  </p>
+
+                <a href={% url 'index' %} class="btn bt1 hvr-grow">Go to Blog</a>
+
+                <a href="" class="btn bt2 hvr-grow ">Know more</a>
+
+                <!-- skill start -->
+                <div class="my-skills">
+                    <div class="title center-align" data-aos="zoom-in-up">
+                        <i class="fa fa-book"></i>&nbsp;&nbsp;My Skill
+                    </div>
+                    <div>
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #42A5F5 0%, #7FFFD4 100%); width: 80%">
+                                    <span>Python</span>
+                                </div>
+                                <div class="skill-bar-percent">85%</div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FFA500 0%, #FFE4B5 100%); width: 70%">
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="skill-bar-percent">70%</div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #00CED1 0%, #AFEEEE 100%); width: 70%">
+                                    <span>HTML5</span>
+                                </div>
+                                <div class="skill-bar-percent">70%</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 50%">
+                                    <span>CSS</span>
+                                </div>
+                                <div class="skill-bar-percent">50%</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 60%">
+                                    <span>TypeScript</span>
+                                </div>
+                                <div class="skill-bar-percent">60%</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 30%">
+                                    <span>AliCloud</span>
+                                </div>
+                                <div class="skill-bar-percent">30%</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 15%">
+                                    <span>ML</span>
+                                </div>
+                                <div class="skill-bar-percent">15%</div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l6" data-aos="fade-up">
+                            <div class="skillbar">
+                                <div class="skillbar-title"
+                                    style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 30%">
+                                    <span>Java</span>
+                                </div>
+                                <div class="skill-bar-percent">30%</div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
                 </div>
-            </footer>
-        </div>
-    </body>
+                <!-- skill end -->
+
+                <div class="end-about">
+
+                  <img src="static/homepage/images/icon/q.png" alt="client4">
+
+                  <span class="h3">If you really want it.</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+        <!-- start work section-->
+        <section class="section-work  ">
+
+          <div class="container text-center">
+            <h2 class="h1 work-h">Resume</h2>
+
+            <div class="row">
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/frerrero.png" class="img-fluid" alt="Frerrero PSD Template">
+
+                  <h5>Frerrero PSD Template</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/power-pen.png" class="img-fluid" alt="Power of pen tools">
+
+                  <h5>Power of pen tools</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/designer-fav.png" class="img-fluid" alt="Designer Favorite Tools">
+
+                  <h5>Designer Favorite Tools</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/workspace.png" class="img-fluid" alt="Office Workspace">
+
+                  <h5>Office Workspace</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/velocity.png" class="img-fluid" alt="Velocity 6 Template">
+
+                  <h5>Velocity 6 Template</h5>
+
+                </div>
+
+              </div>
+
+              <div class="col-12  col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/installation-infographic.png" class="img-fluid" alt="Installation Infographic">
+
+                  <h5>Installation Infographic</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/favorite-di.png" class="img-fluid" alt="Designer Favorite">
+
+                  <h5>Designer Favorite</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/france.png" style="height: 170px" class="img-fluid" alt="France Template">
+
+                  <h5>France Template</h5>
+
+                </div>
+
+              </div>
+
+              <div class=" col-12 col-sm-6 col-lg-4 wow fadeInUp">
+
+                <div class="work-contain">
+
+                  <img src="static/homepage/images/work/happy-freelance-designer.png" class="img-fluid" alt="Happy Freelance">
+
+                  <h5>Happy Freelance Designer</h5>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- end work section-->
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'homepage/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'homepage/js/popper.min.js' %}"></script>
+  <script src="{% static 'homepage/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'homepage/js/jquery.nicescroll.js' %}"></script>
+  <script src="{% static 'homepage/js/plugin.js' %}"></script>
+  <script src="{% static 'homepage/js/wow.min.js' %}"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="{% static 'libs/others/clicklove.js' %}"></script>
+
+  <script>
+      
+    $('.section-labs').hide();
+    $('.section-work').hide();
+    new WOW().init();
+  </script>
+  <script>
+    AOS.init({
+        easing: 'ease-in-out-sine',
+        duration: 700,
+        delay: 100
+    });
+  </script>
+    
+</body>
+
 </html>
